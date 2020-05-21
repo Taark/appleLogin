@@ -87,6 +87,7 @@ func (a *AppleConfig) GetAppleToken(code string, expireTime int64) (*AppleAuthTo
 		"kid": a.KeyID,
 		"alg": "ES256",
 	}
+
 	//make JWT sign
 	tokenString, _ := token.SignedString(a.AESCert)
 	v := url.Values{}
@@ -96,7 +97,8 @@ func (a *AppleConfig) GetAppleToken(code string, expireTime int64) (*AppleAuthTo
 	v.Set("grant_type", AppleGrantType)
 	vs := v.Encode()
 	//send request
-	resp, body, err2 := gorequest.New().Post(AppleAuthURL).Type("urlencoded").Send(vs).End()
+	resp, body, err2 := gorequest.New().Post(AppleAuthURL).Type(gorequest.TypeUrlencoded).Send(vs).End()
+
 	if err2 != nil {
 		return nil, fmt.Errorf(fmt.Sprint(err2))
 	}
