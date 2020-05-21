@@ -2,7 +2,7 @@
 
 A tool for `Sign In with Apple` REST API written in `Golang`
 
-![go-report](https://goreportcard.com/badge/github.com/BillSJC/appleLogin)
+![go-report](https://goreportcard.com/badge/github.com/taark/appleLogin)
 
 ![logo here](logo.jpg)
 
@@ -14,7 +14,7 @@ A tool for `Sign In with Apple` REST API written in `Golang`
 
 ### Install:
 
-> go get github.com/BillSJC/appleLogin
+> go get github.com/taark/appleLogin
 
 ### Test:
 
@@ -27,7 +27,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/BillSJC/appleLogin"
+	"github.com/taark/appleLogin"
 )
 
 func main(){
