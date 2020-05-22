@@ -118,7 +118,7 @@ func (a *AppleConfig) GetAppleToken(code string, expireTime int64) (*AppleAuthTo
 	return t, nil
 }
 
-func (a *AppleConfig) DecodeToken(token string) (*AppleUser, error) {
+func (a *AppleConfig) GetUserByToken(token string) (*AppleUser, error) {
 	t, err := jwt.Parse(token, func(token *jwt.Token) (interface{}, error) {
 		return nil, nil
 	})
